@@ -1,112 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="Generales.html">Generales</a>
+  <a href="aca.html">Académico</a>
+  <a href="lab.html">Laborales</a>
+  <a href="hob.html">Hobbies</a>
+  <a href="ref.html">Referencias</a>
+  <a href="registros.html">Registro</a>
+  
+</nav>
 <meta charset="UTF-8">
 <title>Registro</title>
 
 <style>
-body {
-  background: linear-gradient(to right, #dbeafe, #bfdbfe);
-  font-family: 'Trebuchet MS', sans-serif;
-  text-align: center;
+body{
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #817638, #a7a698);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(14, 12, 12);
 }
 
 /* TITULO */
 h1 {
-  color: #1e3a8a;
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+/* TARJETA MODERNA */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   margin-top: 20px;
 }
 
-/* CONTENEDOR */
-.contenedor {
-  width: 60%;
-  margin: 20px auto;
-}
-
-/* TARJETA */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-  animation: aparecer 1s forwards;
-}
-
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* FORM */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-top: 15px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 label {
-  display: inline-block;
-  width: 100px;
-  text-align: right;
-  margin-right: 10px;
+  font-size: 14px;
+  color: #060707;
 }
 
 input, textarea {
-  width: 60%;
-  padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #999;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: rgb(36, 32, 32);
+  font-size: 14px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #2a2b2e;
 }
 
 input:focus, textarea:focus {
-  border-color: #1e3a8a;
   outline: none;
+  box-shadow: 0 0 8px #3b82f6;
 }
 
-textarea {
-  height: 80px;
-}
-
-/* BOTONES */
-button, .boton {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #1e3a8a;
-  color: white;
+/* BOTON */
+button {
+  padding: 12px;
+  border-radius: 12px;
   border: none;
-  border-radius: 8px;
-  text-decoration: none;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  font-size: 15px;
   cursor: pointer;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
-button:hover, .boton:hover {
-  background-color: #0f172a;
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #3b82f6;
+}
+
+/* BOTON VOLVER */
+.boton {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: rgba(255,255,255,0.2);
 }
 
 /* NAV */
 nav {
-  background-color: #1e3a8a;
-  padding: 15px;
-  position: fixed;
-  bottom: 0;
+  margin-top: 40px;
+  background: rgba(0,0,0,0.3);
   width: 100%;
+  text-align: center;
+  padding: 15px;
+  backdrop-filter: blur(10px);
 }
 
 nav a {
-  color: white;
+  color: #cbd5f5;
   margin: 10px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 nav a:hover {
-  color: #facc15;
+  color: #60a5fa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .card {
+    width: 95%;
+  }
 }
 </style>
 </head>
@@ -115,52 +143,34 @@ nav a:hover {
 
 <h1>Registro de Contacto</h1>
 
-<div class="contenedor">
-  <div class="card">
+<div class="card">
 
-     AQUÍ VA TU LINK DE FORMSPREE 
-    <form action="https://formspree.io/f/mqewqqpj" method="POST">
+<form action="https://formspree.io/f/mqewqqpj" method="POST">
 
-      <!-- CONFIG EXTRA -->
-      <input type="hidden" name="_subject" value="nuevo correo verificado">
-      <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="nuevo correo verificado">
+  <input type="hidden" name="_captcha" value="false">
 
-      <ul>
-        <li>
-          <label>Nombre:</label>
-          <input type="text" name="name" required>
-        </li>
-
-        <li>
-          <label>Correo:</label>
-          <input type="email" name="email" required>
-        </li>
-
-        <li>
-          <label>Mensaje:</label>
-          <textarea name="message" required></textarea>
-        </li>
-
-        <li>
-          <button type="submit">Enviar</button>
-        </li>
-      </ul>
-
-    </form>
-
-    <a href="index.html" class="boton">⬅ Volver al Inicio</a>
-
+  <div>
+    <label>Nombre</label>
+    <input type="text" name="name" placeholder="Tu nombre" required>
   </div>
+
+  <div>
+    <label>Correo</label>
+    <input type="email" name="email" placeholder="correo@email.com" required>
+  </div>
+
+  <div>
+    <label>Mensaje</label>
+    <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+  </div>
+
+  <button type="submit">Enviar</button>
+
+</form>
+
+<a href="index.html" class="boton">⬅ Volver al Inicio</a>
+
 </div>
-
-<nav>
-  <a href="index.html">Inicio</a>
-  <a href="aca.html">Académico</a>
-  <a href="lab.html">Laborales</a>
-  <a href="hob.html">Hobbies</a>
-  <a href="ref.html">Referencias</a>
-  <a href="registros.html">Registro</a>
-</nav>
-
 </body>
 </html>
