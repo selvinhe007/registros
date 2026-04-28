@@ -1,26 +1,30 @@
 /* Estilo base de la barra */
 .navbar ul {
-list-style-type: symbols(none);
+    list-style-type: none; /* corregido */
     background-color: #a89595;
     padding: 0;
     margin: 0;
-    display: flex; /* Esta es la orden mágica */
-    justify-content: center; /* Esto los centra */
-    gap: 20px; /* Esto les da espacio entre ellos */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
+.navbar {
+    font-family: Arial, sans-serif;
+}
 
 .navbar li a {
-    display:block;
+    display: block;
     color: white;
     text-align: center;
     padding: 15px 35px;
-    transition: background-color 1s; /* suaviza el efecto hover */
+    text-decoration: none; /* quita el subrayado */
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
 /* efecto hover */
 .navbar li a:hover {
-    background-color: #555; /* Cambia el color de fondo */
+    background-color: #555;
     color: #fff;
-    border-bottom: 2px solid #f1a008; /* Anade borde inferior */
+    border-bottom: 3px solid #f1a008;
 }
